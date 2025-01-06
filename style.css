@@ -1,0 +1,100 @@
+@font-face {
+   font-family: PressStart2P;
+   src: url(fonts/PressStart2P-Regular.ttf);
+}
+
+body {
+    text-align: center;
+    background-size: 40px 40px;
+    background-color: rgb(5, 40, 54);
+    background-image:
+    linear-gradient(to right, rgb(55, 172, 55) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(55, 172, 55) 1px, transparent 1px);
+    background-position: 20px 20px;
+    color: white;
+    font-family: PressStart2P;
+}
+
+#logo {
+    height: 70px;
+    margin-top: 140px;
+}
+
+#search {
+    border-style: solid;
+    border-radius: 0px;
+    height: 35px;
+    border-color: #000000;
+    padding-left: 10px;
+    font-size: 13px;
+    width: 330px;
+    margin-top: 20px;
+    outline: none;
+}
+
+#go {
+    border-style: solid;
+    border-radius: 0px;
+    height: 35px;
+    background: #000000 url(icon.png) no-repeat center center;
+    background-size: 20px;
+    width: 35px;
+    border-color: #000000;
+    vertical-align: bottom;
+    margin-left: -16px;
+}
+
+#go:hover {
+    border-color: black;
+    background: #A8A8A8 url(icon.png) no-repeat center center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+#suggestions {
+    margin-top: 30px;
+    font-size: 8pt;
+}
+
+.suggestion {
+    display: inline-block;
+    width: 100px;
+    height: 70px;
+    margin-right: -11px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center 12px;
+    color: black;
+    padding-top: 40px;
+    height: 30px;
+    font-size: 6pt;
+    vertical-align: middle;
+}
+
+.suggestion:hover{
+    filter: brightness(0.8);
+}
+
+#inputSuggestions {
+    width: 364px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    margin-top: -16px;
+}
+
+.inputSuggestion {
+    background: white;
+    color: black;
+    height: 16px;
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px 0 6px 0;
+    font-size: 8pt;
+}
+
+.inputSuggestion:hover {
+    filter: brightness(0.8);
+}

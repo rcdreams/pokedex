@@ -1,0 +1,251 @@
+<script>
+let pkmn_index = [
+[1, "Bulbasaur", "green"],
+[2, "Ivysaur", "green"],
+[3, "Venusaur", "green"],
+[4, "Charmander", "red"],
+[5, "Charmeleon", "red"],
+[6, "Charizard", "red"],
+[7, "Squirtle", "blue"],
+[8, "Wartortle", "blue"],
+[9, "Blastoise", "blue"],
+[10, "Caterpie", "green"],
+[11, "Metapod", "green"],
+[12, "Butterfree", "white"],
+[13, "Weedle", "brown"],
+[14, "Kakuna", "yellow"],
+[15, "Beedrill", "yellow"],
+[16, "Pidgey", "brown"],
+[17, "Pidgeotto", "brown"],
+[18, "Pidgeot", "brown"],
+[19, "Rattata", "purple"],
+[20, "Raticate", "brown"],
+[21, "Spearow", "brown"],
+[22, "Fearow", "brown"],
+[23, "Ekans", "purple"],
+[24, "Arbok", "purple"],
+[25, "Pikachu", "yellow"],
+[26, "Raichu", "yellow"],
+[27, "Sandshrew", "yellow"],
+[28, "Sandslash", "yellow"],
+[29, "Nidoran♀", "blue"],
+[30, "Nidorina", "blue"],
+[31, "Nidoqueen", "blue"],
+[32, "Nidoran♂", "purple"],
+[33, "Nidorino", "purple"],
+[34, "Nidoking", "purple"],
+[35, "Clefairy", "pink"],
+[36, "Clefable", "pink"],
+[37, "Vulpix", "brown"],
+[38, "Ninetales", "yellow"],
+[39, "Jigglypuff", "pink"],
+[40, "Wigglytuff", "pink"],
+[41, "Zubat", "purple"],
+[42, "Golbat", "purple"],
+[43, "Oddish", "blue"],
+[44, "Gloom", "blue"],
+[45, "Vileplume", "red"],
+[46, "Paras", "red"],
+[47, "Parasect", "red"],
+[48, "Venonat", "purple"],
+[49, "Venomoth", "purple"],
+[50, "Diglett", "brown"],
+[51, "Dugtrio", "brown"],
+[52, "Meowth", "yellow"],
+[53, "Persian", "yellow"],
+[54, "Psyduck", "yellow"],
+[55, "Golduck", "blue"],
+[56, "Mankey", "brown"],
+[57, "Primeape", "brown"],
+[58, "Growlithe", "brown"],
+[59, "Arcanine", "brown"],
+[60, "Poliwag", "blue"],
+[61, "Poliwhirl", "blue"],
+[62, "Poliwrath", "blue"],
+[63, "Abra", "brown"],
+[64, "Kadabra", "brown"],
+[65, "Alakazam", "brown"],
+[66, "Machop", "gray"],
+[67, "Machoke", "gray"],
+[68, "Machamp", "gray"],
+[69, "Bellsprout", "green"],
+[70, "Weepinbell", "green"],
+[71, "Victreebel", "green"],
+[72, "Tentacool", "blue"],
+[73, "Tentacruel", "blue"],
+[74, "Geodude", "brown"],
+[75, "Graveler", "brown"],
+[76, "Golem", "brown"],
+[77, "Ponyta", "yellow"],
+[78, "Rapidash", "yellow"],
+[79, "Slowpoke", "pink"],
+[80, "Slowbro", "pink"],
+[81, "Magnemite", "gray"],
+[82, "Magneton", "gray"],
+[83, "Farfetch'd", "brown"],
+[84, "Doduo", "brown"],
+[85, "Dodrio", "brown"],
+[86, "Seel", "white"],
+[87, "Dewgong", "white"],
+[88, "Grimer", "purple"],
+[89, "Muk", "purple"],
+[90, "Shellder", "purple"],
+[91, "Cloyster", "purple"],
+[92, "Gastly", "purple"],
+[93, "Haunter", "purple"],
+[94, "Gengar", "purple"],
+[95, "Onix", "gray"],
+[96, "Drowzee", "yellow"],
+[97, "Hypno", "yellow"],
+[98, "Krabby", "red"],
+[99, "Kingler", "red"],
+[100, "Voltorb", "red"],
+[101, "Electrode", "red"],
+[102, "Exeggcute", "pink"],
+[103, "Exeggutor", "yellow"],
+[104, "Cubone", "brown"],
+[105, "Marowak", "brown"],
+[106, "Hitmonlee", "brown"],
+[107, "Hitmonchan", "brown"],
+[108, "Lickitung", "pink"],
+[109, "Koffing", "purple"],
+[110, "Weezing", "purple"],
+[111, "Rhyhorn", "gray"],
+[112, "Rhydon", "gray"],
+[113, "Chansey", "pink"],
+[114, "Tangela", "blue"],
+[115, "Kangaskhan", "brown"],
+[116, "Horsea", "blue"],
+[117, "Seadra", "blue"],
+[118, "Goldeen", "red"],
+[119, "Seaking", "red"],
+[120, "Staryu", "brown"],
+[121, "Starmie", "purple"],
+[122, "Mr. Mime", "pink"],
+[123, "Scyther", "green"],
+[124, "Jynx", "red"],
+[125, "Electabuzz", "yellow"],
+[126, "Magmar", "red"],
+[127, "Pinsir", "brown"],
+[128, "Tauros", "brown"],
+[129, "Magikarp", "red"],
+[130, "Gyarados", "blue"],
+[131, "Lapras", "blue"],
+[132, "Ditto", "purple"],
+[133, "Eevee", "brown"],
+[134, "Vaporeon", "blue"],
+[135, "Jolteon", "yellow"],
+[136, "Flareon", "red"],
+[137, "Porygon", "pink"],
+[138, "Omanyte", "blue"],
+[139, "Omastar", "blue"],
+[140, "Kabuto", "brown"],
+[141, "Kabutops", "brown"],
+[142, "Aerodactyl", "purple"],
+[143, "Snorlax", "black"],
+[144, "Articuno", "blue"],
+[145, "Zapdos", "yellow"],
+[146, "Moltres", "yellow"],
+[147, "Dratini", "blue"],
+[148, "Dragonair", "blue"],
+[149, "Dragonite", "brown"],
+[150, "Mewtwo", "purple"],
+[151, "Mew", "pink"]
+]
+</script>
+
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="style.css">
+<script src="jquery.js"></script>
+<script src="levenshtein.js"></script>
+<img id="logo" src="logo.png"><br>
+<form action="javascript:void(0);" autocomplete="off">
+<input id="search" placeholder="Search pokémon by name or number">
+<button id="go"></button>
+</form>
+<div id="inputSuggestions"></div>
+<div id="suggestions">
+Here are some random suggestions:<br><br>
+</div>
+
+<script>
+let color_scheme = {
+    'yellow': '#E5CF6C',
+    'blue': '#5884B3',
+    'red': '#FF6666',
+    'white': 'white',
+	'purple': '#CC6686',
+	'green': '#9DBE59',
+	'brown': '#E68570',
+	'gray': '#D6D6D6',
+	'pink': '#F1C8C0',
+	'black': 'black'
+};
+function goToPkmnPage(pkmn) {
+    location.href = `${pkmn.toLowerCase().replace(/[^a-z]/g, '')}.html`;
+}
+function getMultipleRandom(arr, num) {
+    return [...arr].sort(() => 0.5 - Math.random()).slice(0, num);
+}
+for(let pkmn of getMultipleRandom(pkmn_index, Math.min(9, pkmn_index.length))) {
+    $("#suggestions").append(`
+        <span class="suggestion" style="
+            background-color: ${color_scheme[pkmn[2]]};
+            background-image: url('art/icons/${pkmn[0]}.png');
+            ${color_scheme[pkmn[2]] == "black" ? "color: white;" : ""}
+        "
+        onclick="goToPkmnPage('${pkmn[1]}')">
+            ${pkmn[1]}
+        </span>
+    `);
+}
+function getMostSimilarPkmn(search) {
+    let most_similar = "";
+    let best_distance = 10000;
+    for(let pkmn of pkmn_index) {
+        let distance = levenshtein(search, pkmn[1]);
+        if(distance < best_distance) {
+            most_similar = pkmn[1];
+            best_distance = distance;
+        }
+    }
+    return most_similar;
+}
+
+$("#inputSuggestions").on("click", ".inputSuggestion", function() {
+    goToPkmnPage($(this).html());
+});
+
+$("body").click(function(e) {
+    if(e.target.id == "search") return;
+    $("#inputSuggestions").hide();
+});
+$("#search").click(function() {
+    $("#inputSuggestions").show();
+});
+
+function populateInputSuggestions() {
+    let resultsCount = 0;
+    $("#inputSuggestions").html("");
+    let input = $("#search").val();
+    if(input == "") return;
+    $("#inputSuggestions").show();
+    for(let pkmn of pkmn_index) {
+        if(pkmn[1].toLowerCase().includes(input.toLowerCase())) {
+            $("#inputSuggestions").append(`<span class="inputSuggestion" style="
+            background-color: ${color_scheme[pkmn[2]]};">${pkmn[1]}</span>`);
+            resultsCount++;
+            if(resultsCount > 4) return;
+        }
+    }
+}
+
+$("#search").on("input", function() {
+    populateInputSuggestions();
+});
+
+$("#go").click(function() {
+    goToPkmnPage(getMostSimilarPkmn($("#search").val()));
+});
+</script>
