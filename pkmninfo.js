@@ -68,7 +68,7 @@ $("body").prepend(`
 `);
 
 $("#logo").click(function() {
-    location.href = "/dex";
+    location.href = "/pokedex";
 });
 
 $("body").append(`<div id="formicons"></div>`);
