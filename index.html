@@ -183,7 +183,7 @@ let color_scheme = {
 	'black': 'black'
 };
 function goToPkmnPage(pkmn) {
-    location.href = `${pkmn.toLowerCase().replace(/[^a-z]/g, '')}.html`;
+    location.href = `${pkmn.toLowerCase().replace(/[^a-z]/g, '')}`;
 }
 function getMultipleRandom(arr, num) {
     return [...arr].sort(() => 0.5 - Math.random()).slice(0, num);
