@@ -1,10 +1,11 @@
 :root {
-    --blue1: #c1eaf1;
-    --blue2: #79c8d6;
+    --blue1: #c7e8fe;
+    --blue2: #a6dcfe;
+    --blue3: #71c6eb;
 
     --pokeball-size: 400px;
     --inner-pokeball-size: 350px;
-    --pokeball-button-size: 100px;
+    --pokeball-button-size: 130px;
     --pokeball-strip-proportion: 45%;
 
     --pokeball-pos-top: 160px;
@@ -15,8 +16,10 @@
 
     --ellipse-width: 500px;
     --ellipse-height: 60px;
+    --ellipse-border-size: 6px;
     --inner-ellipse-width: 400px;
     --inner-ellipse-height: 40px;
+    --inner-ellipse-border-size: 3px;
 
     --pokeball-pokemon-distance: 40px;
 
@@ -25,7 +28,7 @@
     --drop-shadow: drop-shadow(8px 8px 0px rgba(0,0,0,0.6));
 
     --ellipse-pos-top: calc(var(--pokeball-pos-top) + var(--ellipse-pokeball-distance));
-    --ellipse-pos-right: calc(var(--pokeball-pos-right) + (var(--pokeball-size) - var(--ellipse-width)) / 2);
+    --ellipse-pos-right: calc(var(--pokeball-pos-right) + (var(--pokeball-size) - (var(--ellipse-width) + 2 * var(--ellipse-border-size))) / 2);
 }
 
 @font-face {
@@ -50,7 +53,7 @@ body {
     font-family: PressStart2P;
     margin: 0;
     background-size: 40px 40px;
-    background-color: rgb(5, 40, 54);
+    background-color: #193b52;
     background-image:
     linear-gradient(to right, rgb(55, 172, 55) 1px, transparent 1px),
     linear-gradient(to bottom, rgb(55, 172, 55) 1px, transparent 1px);
@@ -269,29 +272,29 @@ stats:before {
     height: var(--ellipse-height);
     width: var(--ellipse-width);
     border-radius: 50%;
-    background: var(--blue2);
+    background: var(--blue3);
     top: var(--ellipse-pos-top);
     right: var(--ellipse-pos-right);
     position: absolute;
-    border: 4px solid var(--blue1);
+    border: var(--ellipse-border-size) solid var(--blue1);
 }
 
 #base1 {
     height: var(--inner-ellipse-height);
     width: var(--inner-ellipse-width);
     border-radius: 50%;
-    background: var(--blue2);
-    top: calc(var(--ellipse-pos-top) + (var(--ellipse-height) - var(--inner-ellipse-height)) / 2);
-    right: calc(var(--ellipse-pos-right) + (var(--ellipse-width) - var(--inner-ellipse-width)) / 2);
+    background: var(--blue3);
+    top: calc(var(--ellipse-pos-top) + (var(--ellipse-height) + 2 * var(--ellipse-border-size) - (var(--inner-ellipse-height) + 2 * var(--inner-ellipse-border-size))) / 2);
+    right: calc(var(--ellipse-pos-right) + (var(--ellipse-width) + 2 * var(--ellipse-border-size) - (var(--inner-ellipse-width) + 2 * var(--inner-ellipse-border-size))) / 2);
     position: absolute;
-    border: 2px solid var(--blue1);
+    border: var(--inner-ellipse-border-size) solid white;
 }
 
 from, method {
     text-align: center;
     width: 170px;
     position: absolute;
-    right: 0;
+    right: 6px;
     top: 8px;
 }
 
@@ -302,4 +305,27 @@ method {
 #basicStage {
     position: relative;
     top: 32px;
+}
+
+#methodIcons {
+    float: left;
+    width: 183px;
+    left: 45px;
+    top: 11px;
+    position: relative;
+}
+
+#methodIcons img {
+    height: 28px;
+    margin-left: 6px;
+    margin-bottom: 5px;
+    filter: brightness(0.9);
+}
+
+.enabled {
+    filter: brightness(0) !important;
+}
+
+#methodIcons img:last-child {
+    margin-right: 27px;
 }

@@ -52,18 +52,29 @@ $("form").each(function(i) {
 });
 let evolutionFrom = $("from")[0].innerHTML;
 let evolutionMethod = $("method")[0].innerHTML;
+let evolutionIcons = $("icons")[0].innerHTML.split("/").map((x) => x.toLowerCase());
 $("from").prepend(`<br>Evolves from:<br>-`);
 $("from").append(`-<br>`);
+
+$("icons").hide();
 
 if(evolutionFrom == "") {
     $("from").hide();
     $("method").hide();
     $("evolution").append("<span id='basicStage'>-Basic Stage-</span>");
 }
+else {
+    $("from").before(`<span id="methodIcons"></span>`);
+    let icons = ["level", "trade", "item", "time", "happiness", "move", "location", "special"];
+    for(let icon of icons) {
+        let enabled = (evolutionIcons.includes(icon)) ? `class="enabled"` : "";
+        $("#methodIcons").append(`<img ${enabled} src="art/evolution/${icon}.png">`);
+    }
+}
 
 
 $("body").prepend(`
-    <title>#${number} - ${name}</title>
+    <title>#${number} - ${name} | RCDreams' Pokédex</title>
     <img id="logo" src="logo.png"><br><br>
 `);
 
