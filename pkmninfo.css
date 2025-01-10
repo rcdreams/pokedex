@@ -21,7 +21,8 @@
     --inner-ellipse-height: 40px;
     --inner-ellipse-border-size: 3px;
 
-    --pokeball-pokemon-distance: 40px;
+    --pokemon-pokeball-distance: -101px;
+    --pokemon-size: 600px;
 
     --ellipse-pokeball-distance: 405px;
 
@@ -80,6 +81,10 @@ name {
     top: 58px;
     left: -20px;
     filter: var(--drop-shadow);
+}
+
+number {
+    display: none;
 }
 
 number:before {
@@ -172,11 +177,14 @@ description, stats {
     color: black;
     border: 10px solid black;
     position: absolute;
-    left: 30px;
-    top: 415px;
     width: 200px;
     text-align: left;
     filter: var(--drop-shadow);
+}
+
+description {
+    left: 320px;
+    top: 222px;
 }
 
 description:before, stats:before {
@@ -191,7 +199,8 @@ description:before, stats:before {
 }
 
 stats {
-    top: 165px;
+    top: 222px;
+    left: 30px;
 }
 
 stats:before {
@@ -249,23 +258,19 @@ stats:before {
     position: absolute;
 }
 
-.pkmnImgContainer {
-    position: absolute;
-    text-align: center;
-    width: var(--pokeball-size);
-    height: var(--pokeball-size);
-    right: var(--pokeball-pos-right);
-    top: calc(var(--pokeball-pos-top) + var(--pokeball-pokemon-distance));
-    z-index: 10;
-}
-
 .pkmnImg {
     position: absolute;
-    bottom: 0;
-    margin: auto;
-    left: 0;
-    right: 0;
-    max-width: 100%;
+    text-align: center;
+    height: var(--pokemon-size);
+    right: calc(var(--pokeball-pos-right) + (var(--pokeball-size) - var(--pokemon-size)) / 2);
+    top: calc(var(--pokeball-pos-top) + var(--pokemon-pokeball-distance));
+    z-index: 10;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    user-select: none;
+    pointer-events: none;
+    /*max-width: 100%;
+    object-fit: contain;*/
 }
 
 #base0 {
@@ -277,6 +282,7 @@ stats:before {
     right: var(--ellipse-pos-right);
     position: absolute;
     border: var(--ellipse-border-size) solid var(--blue1);
+    margin-bottom: 40px;
 }
 
 #base1 {
@@ -328,4 +334,149 @@ method {
 
 #methodIcons img:last-child {
     margin-right: 27px;
+}
+
+@media screen and (max-width: 1170px) {
+    #pokeball0, #pokeball1, #pokeball2, #pokeball3, #base0, #base1, .pkmnImg, stats, description {
+      margin: auto;
+      left: 0;
+      right: 0;
+    }
+    stats, description {
+        position: relative;
+        top: unset;
+        margin-top: 47px;
+        display: block;
+    }
+    description {
+        margin-top: 612px;
+    }
+
+    stats {
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    evolution {
+        top: 160px;
+    }
+    :root {
+        --pokeball-pos-top: 270px;
+    }
+    description {
+        margin-top: 727px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        --pokeball-size: 240px;
+        --inner-pokeball-size: 210px;
+        --pokeball-button-size: 78px;
+        --pokeball-strip-proportion: 45%;
+
+        --pokeball-pos-top: 270px;
+        --pokeball-pos-right: 150px;
+
+        --strip-height: 120px;
+        --strip-border-size: 12px;
+
+        --ellipse-width: 300px;
+        --ellipse-height: 36px;
+        --ellipse-border-size: 3.6px;
+        --inner-ellipse-width: 240px;
+        --inner-ellipse-height: 24px;
+        --inner-ellipse-border-size: 1.8px;
+
+        --pokemon-pokeball-distance: -60.6px;
+        --pokemon-size: 360px;
+
+        --ellipse-pokeball-distance: 243px;
+    }
+
+    description {
+        margin-top: 540px;
+    }
+
+    name {
+        padding-left: 40px;
+        width: 340px;
+    }
+
+    #formicons {
+        margin-left: 16px;
+    }
+
+    #type0 {
+        left: 288px;
+    }
+
+    #typeShadow0 {
+        left: 293px;
+    }
+
+    #type1 {
+        left: 259px;
+    }
+
+    #typeShadow1 {
+        left: 264px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    :root {
+        --pokeball-size: 168px;
+        --inner-pokeball-size: 147px;
+        --pokeball-button-size: 54.6px;
+        --pokeball-strip-proportion: 45%;
+
+        --pokeball-pos-top: 270px;
+        --pokeball-pos-right: 150px;
+
+        --strip-height: 84px;
+        --strip-border-size: 8.4px;
+
+        --ellipse-width: 210px;
+        --ellipse-height: 25.2px;
+        --ellipse-border-size: 2.52px;
+        --inner-ellipse-width: 168px;
+        --inner-ellipse-height: 16.8px;
+        --inner-ellipse-border-size: 1.26px;
+
+        --pokemon-pokeball-distance: -42.42px;
+        --pokemon-size: 252px;
+
+        --ellipse-pokeball-distance: 170.1px;
+    }
+
+    description {
+        margin-top: 452px;
+    }
+
+    name {
+        padding-left: 30px;
+        width: 270px;
+    }
+
+    #formicons {
+        margin-left: 6px;
+    }
+
+    #type0 {
+        left: 228px;
+    }
+
+    #typeShadow0 {
+        left: 233px;
+    }
+
+    #type1 {
+        left: 199px;
+    }
+
+    #typeShadow1 {
+        left: 204px;
+    }
 }

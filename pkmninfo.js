@@ -45,7 +45,7 @@ $("form").each(function(i) {
     }
     $(this).find("stats").append("<br>&nbsp&nbsp&nbsp&nbspSTATS:<br>");
     $(this).find("stats").append(`Hp-${hp}<br>Atk-${atk}<br>Def-${def}<br>Sp.Atk-${spAtk}<br>Sp.Def-${spDef}<br>Speed-${speed}<br>`);
-    $(this).append(`<div class="pkmnImgContainer"><img class="pkmnImg" src="art/official/${number}${i == 0 ? "" : "-" + name.toLowerCase().replace(/[^a-z]/g, '')}.png"></div>`);
+    $(this).append(`<img class="pkmnImg" src="art/official/${number}${i == 0 ? "" : "-" + name.toLowerCase().replace(/[^a-z]/g, '')}.png">`);
 
 
     forms.push({name, types, abilities, hp, atk, def, spAtk, spDef, speed, species, description});
@@ -74,7 +74,7 @@ else {
 
 
 $("body").prepend(`
-    <title>#${number} - ${name} | RCDreams' Pokédex</title>
+    <title>${name} | RCDreams' Pokédex</title>
     <img id="logo" src="logo.png"><br><br>
 `);
 
